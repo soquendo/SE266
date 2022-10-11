@@ -1,5 +1,6 @@
 <?php
 
+//create array
 $animals = [
     'Chupacabra',
     'Bigfoot',
@@ -8,4 +9,6 @@ $animals = [
     'Minotaur'
 ];
 
+//not sure how this works, will ask question in class
 require 'index.view.php';
+
