@@ -1,14 +1,13 @@
 <?php
 
+require 'functions.php';
+
 
 $animals = ['dog', 'cat'];
 
 
-echo '<pre>';
-
-die(var_dump($animals));
-
-echo '</pre>';
+dd('hello world');
+//"die and dump"
 
 
 require 'index.view.php';
