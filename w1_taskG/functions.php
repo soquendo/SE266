@@ -1,11 +1,27 @@
 <?php
 
-function fizzBuzz($data){
+function fizzBuzz($num){
 
-echo '<pre>';
+    for ($num = 0; $num <=100; $num++){
 
-die(var_dump($data));
+        if (($num + 1) % 2 == 0 and ($num + 1) % 3 == 0)
+            echo "fizzBuzz";
+        elseif (($num + 1) % 3 == 0)
+            echo "buzz";
+        elseif (($num + 1) % 2 == 0)
+            echo "fizz";
 
-echo '</pre>';
+        else 
+            echo '<pre>';
+
+            die(var_dump($num));
+
+            echo '</pre>';
+
+
+    }
 
 }
+
+
+
