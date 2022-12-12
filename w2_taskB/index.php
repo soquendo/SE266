@@ -1,5 +1,6 @@
 <?php
 
+//connect to patient file
 require 'patient.php';
 
 //determine age
@@ -10,7 +11,7 @@ function dob ($birthdate){
     return $age->y;
 }
 
-//checking for future date
+//checking for valid future date
 function validDate ($date){
     $start = new DateTime($date);
     $now = new DateTime();
@@ -40,11 +41,11 @@ function bmi ($inch, $lbs){
 //assigning variable for errors
 $feedback = "";
 
-//concatenation "info" var
+//assign var for info
 $info = "";
 
 
-//upon submit button action
+//submit button action
 if(isset($_POST['submitbtn'])){
 
     //RETRIEVE first name

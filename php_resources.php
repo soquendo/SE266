@@ -77,17 +77,8 @@
         <h3>PHP Resources</h3>
         <ul>
 
-            <li>
-                <a href="https://www.w3schools.com/php/" target="_blank">W3 Schools - PHP </a>
-            </li>
-
-            <li>
-                <a href="https://www.php.net/" target="_blank">PHP.net</a>
-            </li>
-
-            <li>
-                <a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a>
-            </li>
+        <li><a href="https://phpdelusions.net/pdo">(The only proper) PDO tutorial</a></li> 
+        <li><a href= "https://phptherightway.com/">PHP The right way</a></li> 
 
         </ul>
     </div>
