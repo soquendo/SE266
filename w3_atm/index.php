@@ -1,19 +1,15 @@
 
 <?php
-    if (isset ($_POST['withdrawChecking'])) 
-    {
+    if (isset ($_POST['withdrawChecking'])) {
         echo "I pressed the checking withdrawal button";
     } 
-    else if (isset ($_POST['depositChecking'])) 
-    {
+    else if (isset ($_POST['depositChecking'])) {
         echo "I pressed the checking deposit button";
     } 
-    else if (isset ($_POST['withdrawSavings'])) 
-    {
+    else if (isset ($_POST['withdrawSavings'])) {
         echo "I pressed the savings withdrawal button";
     } 
-    else if (isset ($_POST['depositSavings'])) 
-    {
+    else if (isset ($_POST['depositSavings'])) {
         echo "I pressed the savings deposit button";
     } 
      

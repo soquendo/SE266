@@ -56,6 +56,7 @@
             $details = "Account ID:" . $this->accountId;
             $details .= "Balance:" . $this->balance;
             $details .= "Start Date:" . $this->startDate;
+            return $details;
         } // end getAccountDetails
         
     } // end account

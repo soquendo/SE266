@@ -1,27 +1,19 @@
 <?php
 
+//fizzbuzz function accepts just the $num parameter
 function fizzBuzz($num){
+   
+    if ($num % 2 == 0 and $num % 3 == 0){
+        echo "fizzBuzz";}
+    elseif ($num % 3 == 0){
+        echo "buzz";}
+    elseif ($num % 2 == 0){
+        echo "fizz";}
 
-    for ($num = 0; $num <=100; $num++){
-
-        if (($num + 1) % 2 == 0 and ($num + 1) % 3 == 0)
-            echo "fizzBuzz";
-        elseif (($num + 1) % 3 == 0)
-            echo "buzz";
-        elseif (($num + 1) % 2 == 0)
-            echo "fizz";
-
-        else 
-            echo '<pre>';
-
-            die(var_dump($num));
-
-            echo '</pre>';
-
+    else { echo $num; }
+        //die(var_dump($num));
 
     }
-
-}
 
 
 
