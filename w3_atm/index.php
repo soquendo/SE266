@@ -83,8 +83,8 @@
         } 
         else
         {
-            $checking = new CheckingAccount ('C123', 1000, '12-20-2019');
-            $savings = new SavingsAccount('S123', 5000, '03-20-2020');
+            $checking = new CheckingAccount ('511789546', 1000, '06-26-2018');
+            $savings = new SavingsAccount('84576984', 5000, '05-11-2019');
         }
 
 ?>
