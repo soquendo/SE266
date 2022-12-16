@@ -72,13 +72,15 @@
     </style>
 </head>
 <body>
-<?php require "header.php";?>
+    <?php require "header.php";?>
     <div>
         <h3>PHP Resources</h3>
         <ul>
 
         <li><a href="https://phpdelusions.net/pdo">(The only proper) PDO tutorial</a></li> 
         <li><a href= "https://phptherightway.com/">PHP The right way</a></li>
+        <li><a href= "https://www.learn-php.org/">Learn PHP via interactive tutorial</a></li>
+        
 
         </ul>
     </div>

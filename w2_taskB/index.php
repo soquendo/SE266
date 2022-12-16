@@ -1,63 +1,149 @@
-<?php require "functions.php" ?>
+<?php
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patient Intake Form</title>
-    <style>
-        .lite{
-            font-weight: lighter;
+//calculating age
+function age ($bdate) {
+    $date = new DateTime($bdate);
+    $now = new DateTime();
+    $interval = $now->diff($date);
+    return $interval->y;
+ }
+
+ //determining if date is a future date
+function future ($date){
+    $start = new DateTime($date);
+    $now = new Datetime();
+    if($start > $now){
+        return true;
+    } else{
+        return false;
+    }
+ }
+
+ //calculating bmi
+function bmi ($inch,$lbs){
+    //converting inches to meters
+    $h = $inch * 0.0254;
+    //converting pounds to kg
+    $w = $lbs / 2.20462;
+    //calculating bmi
+    $m = $w / ($h * $h);
+    //return results
+    return $m;
+}
+//setting up var for errors
+$feedback = "";
+//var to concat info to
+$info = "";
+
+//submit button hit
+if(isset($_POST['submitbtn'])){
+    //getting first name from form
+    $fname = filter_input(INPUT_POST, 'fname');
+    //checking to see if field was left blank
+    if($fname == ""){
+        //if blank then add error msg to feedback var
+        $feedback .= "ERROR: First name can not be left blank!<br>";
+    } else{
+        //if not blank then add name to info var
+        $info .= "<b>Name:</b> " . $fname . " ";
+    }
+
+    //getting last name
+    $lname = filter_input(INPUT_POST, 'lname');
+    //checking if blank
+    if($lname == ""){
+        //blank = error msg
+        $feedback .= "ERROR: Last name can not be left blank!<br>";
+    } else{
+        //if not blank then add to info var
+        $info .= $lname . "<br>";
+    }
+
+    //getting marital status
+    $status = filter_input(INPUT_POST, 'status');
+    //checking there has been a selection
+    if($status == ""){
+        //no selection adds error msg to feedback
+        $feedback .= "ERROR: Please select Marital Status<br>";
+    } else{
+        //else add status to info
+        $info .= "<b>Marital Status:</b> " . $status . "<br>";
+    }
+
+    //retrieving medical conditions
+    //does NOT run
+    $conditions = filter_input(INPUT_POST, 'conditions');
+    if($value == "Yes"){
+        $info .= "<br><b>Conditions:</b> $value";
+    }
+
+    //getting birthdate
+    $dob = filter_input(INPUT_POST, 'dob');
+    if($dob == ""){
+        //checking to see if there was a date entered
+        $feedback .= "ERROR: D.O.B can not be blank<br>";
+    } else{
+        //calling future func to see if the date is in the future.
+        if(future($dob)){
+            $feedback .= "ERROR: D.O.B can not be a future date<br>";
+        } else{
+            //if is past date then add date of birth and calculate age and add both results to info
+            $info .= "<b>Date of Birth:</b> " . $dob . "<br><b>Age:</b> " . age($dob);
         }
+    }
+    //echo age($dob);
 
-        .form{
-            font-weight: bold;
+    $height = filter_input(INPUT_POST, 'height', FILTER_VALIDATE_FLOAT);
+    if($height == ""){
+        $feedback .= "ERROR: height can not be blank!<br>";
+    } else{
+        if($height < 0 || $height > 150){
+            $feedback .= "ERROR: You entered an invalid height!";
+        }else{
+            $info .= "<br><b>Height:</b> $height";
         }
+    }
 
-        
-    </style>
-</head>
-<body>
-    <?php require "../header.php" ?>
-    <h2>Patient Intake Form</h2>
-    <div class="form">
-        <form action="functions.php" method='POST'>
-            First Name:
-            <input type="text" name="fname" placeholder="Enter First Name"> <br />
+    $weight = filter_input(INPUT_POST, 'weight', FILTER_VALIDATE_FLOAT);
+    if($weight == ''){
+        $feedback .= "ERROR: Weight can not be blank!<br>";
+    } else{
+        if($weight < 0 || $weight > 999){
+            $feedback .= "ERROR: You entered an invalid weight! Must be Numeric [0-999]<br>";
+        }else{
+            $info .= "<br><b>Weight:</b> $weight";
+        }
+    }
 
-            Last Name:
-            <input type="text" name="lname" placeholder="Enter Last Name"> <br />
+    $bmiRes = bmi($height,$weight);
+    $bmi = "";
 
-            Married: 
-            <input type="radio" value="Yes" name="status" class="lite">Yes
-            <input type="radio" value="No" name="status" class="lite">No<br />
+    if($bmiRes < 18.5){
+        $bmi="Underweight";
+    } elseif ($bmiRes >= 18.5 && $bmiRes < 25) {
+        $bmi="Normal Weight";
+    } elseif ($bmiRes >= 25 && $bmiRes < 30) {
+        $bmi="Overweight";
+    }   else {
+        $bmi="Obese";
+    }
+    $bmiRes = round($bmiRes, 1);
+    $info .= "<br><b>BMI:</b> $bmiRes";
+    $info .= "<br><b>BMI class:</b> $bmi";
 
-            Conditions:
-            <input type="checkbox" value="High Blood Pressure" name="conditions" class="lite">High Blood Pressure
-            <input type="checkbox" value="Diabetes" name="conditions" class="lite">Diabetes
-            <input type="checkbox" value="Heart Condition" name="conditions" class="lite">Heart Condition<br />
+    //< 18.5       underweight
+    //18.5–24.9    normal weight
+    //25.0–29.9    overweight
+    //>= 30        obese
 
-            Birth Date:
-            <input type="date" name="birth_date"><br />
-
-            Height:
-            Feet: 
-            <input type="text" value="ft" name="ft" style="width:40px;" class="lite"/>
-            Inches:  
-            <input type="text" value="inch" name="inches" style="width:40px;" class="lite"> <br />
-            Weight (lbs):
-            <input type="text" value="wgt" name="weight" style="width:40px;"> <br />
-
-            &nbsp;
-
-            <input type="submit" name="storePatient" value="Store Patient Information">
-
-
-
-        </form>
-    </div>
-    
-</body>
-</html>
+    //if feedback contains an "ERROR:" then we do not display results and show all error msgs
+    if(str_contains($feedback, 'ERROR:')){
+        echo $feedback;
+    } else{
+        //if nothing in feedback than we echo out the info
+        echo "<h1>Patient Information</h1>$info";
+    }
+} else{
+    echo "Initial Load of Form";
+}
+require "index.view.php";

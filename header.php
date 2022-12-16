@@ -79,22 +79,23 @@ li {
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content" id="myDropdown">
-      <a href="../week1/index.php">Assignment 1</a>
-      <a href="../week2/index.php">Assignment 2</a>
-      <a href="../week3/index.php">Assignment 3</a>
-      <a href="../week4/index.php">Assignment 4</a>
-      <a href="../week5/index.php">Assignment 5</a>
-      <a href="../week6/index.php">Assignment 6</a>
-      <a href="../week7/index.php">Assignment 7</a>
-      <a href="../week8/index.php">Assignment 8</a>
-      <a href="../week9/index.php">Assignment 9</a>
-      <a href="../week10/index.php">Assignment 10</a> 
+      <a href="..\SE266\w1_taskC\index.php">Basic PHP & Arrays </a>
+      <a href="..\SE266\w1_taskD\index.php">Associated Arrays</a>
+      <a href="..\SE266\w1_taskE\index.php">Booleans and Conditionals</a>
+      <a href="..\SE266\w1_taskF\index.php">Functions</a>
+      <a href="..\SE266\w1_taskG\index.php">Fizz Buzz</a>
+      <a href="..\SE266\w2_taskB\index.php">Patient Intake</a>
+      <a href="..\SE266\w3_atm\index.php">ATM</a>
+      <a href="..\SE266\w4_patient\index.php">Patient List</a>
+      <a href="..\SE266\w6_search\index.php">Patient Search</a>
+      <a href="..\w7_school\index.php">School Reference Database</a>
+      <a href="..\w9_final\index.php">Final Project</a>
     </div>
   </div> 
-  <a href="../site/heroku_resources.php">Heroku Resources</a>
-  <a href="../site/php_resources.php">PHP Resources</a>
-  <a href="../site/git_resources.php">Git Resources</a>
-  <a href="https://github.com/hvanrenselaar/se266-spring-2020">My GitHub Repo</a>
+  <a href="heroku_resources.php">Heroku Resources</a>
+  <a href="php_resources.php">PHP Resources</a>
+  <a href="git_resources.php">Git Resources</a>
+  <a href="https://github.com/soquendo/SE266">My GitHub Repo</a>
 </div>
 <script>
 /* When the user clicks on the button, 

@@ -7,7 +7,6 @@
 	/* Note:
 		You should implement all other methods in the class
 	*/
-	
     abstract class Account 
     {
         protected $accountId;
@@ -16,17 +15,16 @@
         
         public function __construct ($id, $bal, $startDt) 
         {
+           // write code here
            $this->accountId = $id;
            $this->balance = $bal;
            $this->startDate = $startDt;
-
         } // end constructor
         
         public function deposit ($amount) 
         {
+            // write code here
             $this->balance += $amount;
-            //balance = amtDeposited + balance
-
         } // end deposit
 
         abstract public function withdrawal($amount);
@@ -36,26 +34,29 @@
         
         public function getStartDate() 
         {
-            $this->startDate;
-            
+            // write code here
+            return $this->startDate;
         } // end getStartDate
 
         public function getBalance() 
         {
-            $this->balance;
+            // write code here
+            return $this->balance;
         } // end getBalance
 
         public function getAccountId() 
         {
-            $this->accountId;
+            // write code here
+            return $this->accountId;
         } // end getAccountId
 
         // Display AccountID, Balance and StartDate in a nice format
         protected function getAccountDetails()
         {
-            $details = "Account ID:" . $this->accountId;
-            $details .= "Balance:" . $this->balance;
-            $details .= "Start Date:" . $this->startDate;
+            // write code here
+            $details = "<ul><li><b>Account ID:</b> " . $this->accountId . "</li>";
+            $details .= "<li><b>Balance:</b> " . $this->balance . "</li>";
+            $details .= "<li><b>StartDate:</b> " . $this->startDate . "</li></ul>";
             return $details;
         } // end getAccountDetails
         

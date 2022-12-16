@@ -71,19 +71,21 @@
         }
     </style>
 </head>
-
 <body>
-    <?php include __DIR__ . '/../include/header.php'; ?>
-
-    <h2>Git Resources</h2>
-
+    <?php require "header.php";?>
+    <div>
+        <h3>Git Resources</h3>
         <ul>
-            <li><a href="https://www.youtube.com/githubguides">GitHub Training & Guides</a></li> 
-            <li><a href="https://git-scm.com/book/en/v2">Pro Git Book</a></li> 
 
-        </ul> 
+        <li><a href="https://www.youtube.com/githubguides">GitHub Training & Guides</a></li> 
+        <li><a href="https://git-scm.com/book/en/v2">Pro Git Book</a></li>
+        <li><a href="https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners">Intro to Git and Github for beginners</a></li>
+        
 
-    <?php include __DIR__ . '/../include/footer.php'; ?>
+        </ul>
+    </div>
+    <div class="footer">
+        <?php require "footer.php";?>
+    </div>
 </body>
-
 </html>

@@ -1,6 +1,7 @@
 <?php
  
- 	include ("account.php");
+    include_once ("account.php");
+    
  
     class CheckingAccount extends Account 
     {
@@ -9,6 +10,13 @@
         public function withdrawal($amount) 
         {
             // write code here. Return true if withdrawal goes through; false otherwise
+            $new = $this->balance - $amount;
+            if($new >= self::OVERDRAW_LIMIT){
+                $this->balance = $new;
+                return true;
+            }else{
+                return false;
+            }
         } // end withdrawal
 
         //freebie. I am giving you this code.
@@ -24,12 +32,11 @@
 
 // The code below runs everytime this class loads and 
 // should be commented out after testing.
+
     
-    //$checking = new CheckingAccount ('C123', 1000, '12-20-2019');
     //$checking->withdrawal(200);
     //$checking->deposit(500);
     
-    //echo $checking->getAccountDetails();
     //echo $checking->getStartDate();
-    
+
 ?>
