@@ -7,7 +7,7 @@
 <style>
 
 body {
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Tahoma", Times, serif;
   font-size: "16px;";
   margin-left: 20px;
   margin-right: 10px;
@@ -41,7 +41,7 @@ body {
   margin: 0;
 }
 .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
-  background-color: red;
+  background-color: #353B7D;
 }
 .dropdown-content {
   display: none;
@@ -66,7 +66,7 @@ body {
   display: block;
 }
 li {
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Arial Black", Times, serif;
   font-size: "16px;";
 }
 </style>
