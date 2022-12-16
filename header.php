@@ -92,7 +92,7 @@ li {
       <a href="..\w9_final\index.php">Final Project</a>
     </div>
   </div> 
-  <a href="heroku_resources.php">Heroku Resources</a>
+  <a href="hobbies.php">Personal Hobbies</a>
   <a href="php_resources.php">PHP Resources</a>
   <a href="git_resources.php">Git Resources</a>
   <a href="https://github.com/soquendo/SE266">My GitHub Repo</a>
